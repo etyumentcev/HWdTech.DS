@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScopesImpl", "Scope\ScopesI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScopesImplTests", "ScopesImplTests\ScopesImplTests.csproj", "{13293CCB-6775-495E-BC5A-32DD6566E11F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Object", "Object\Object.csproj", "{3D165C66-7BD4-4117-93E8-6698929C8B8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Objects", "Object\Objects.csproj", "{3D165C66-7BD4-4117-93E8-6698929C8B8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOCStrategiesImpl", "IOCStrategiesImpl\IOCStrategiesImpl.csproj", "{1074D46D-88BC-4D61-89A8-CF811107C5E0}"
 EndProject
@@ -33,6 +33,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOCCoreTests", "IOCCoreTests\IOCCoreTests.csproj", "{CDF9C153-F488-4767-BD94-6E025ADFA705}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScopesTests", "ScopesTests\ScopesTests.csproj", "{0F43B343-9997-4829-AC4B-4A1FDA9325DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectsImpl", "ObjectImpl\ObjectsImpl.csproj", "{4BF9A994-1514-4526-8785-B85D5B956830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +110,10 @@ Global
 		{0F43B343-9997-4829-AC4B-4A1FDA9325DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F43B343-9997-4829-AC4B-4A1FDA9325DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F43B343-9997-4829-AC4B-4A1FDA9325DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF9A994-1514-4526-8785-B85D5B956830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF9A994-1514-4526-8785-B85D5B956830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF9A994-1514-4526-8785-B85D5B956830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF9A994-1514-4526-8785-B85D5B956830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,10 +17,25 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
+            AssemblyName name = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\IOCImpls.dll");
+            AppDomain.CurrentDomain.Load(name);
+
             ScopesManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
-                    sc.Add(IOC.IOCKey.ToString(), new IOCImpl(1000));
+                    sc.Add(
+                        IOC.IOCKey.ToString(),
+                        AppDomain.CurrentDomain.CreateInstanceAndUnwrap(
+                            name.FullName,
+                            "HWdTech.IOC.Impl.IOCImpl",
+                            true,
+                            BindingFlags.Default, 
+                            null,
+                            new object[]{1000},
+                            System.Globalization.CultureInfo.CurrentCulture, 
+                            null
+                        )
+                    );
                 }
             );
 
