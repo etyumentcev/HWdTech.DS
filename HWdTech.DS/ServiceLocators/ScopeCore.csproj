@@ -7,8 +7,8 @@
     <ProjectGuid>{3E82FCC0-3A58-429C-AB55-D15AD75AACD5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServiceLocators</RootNamespace>
-    <AssemblyName>Scopes</AssemblyName>
+    <RootNamespace>HWdTech</RootNamespace>
+    <AssemblyName>ScopeCore</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

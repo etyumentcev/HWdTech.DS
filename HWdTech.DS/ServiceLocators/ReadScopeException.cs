@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HWdTech.Scopes
+namespace HWdTech
 {
     public class ReadScopeException: Exception
     {

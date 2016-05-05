@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using HWdTech.IOC.Strategies;
-
-namespace HWdTech.IOC.Strategies.Tests
+namespace HWdTech.IOCs.Strategies.Tests
 {
     [TestClass]
     public class ResolveByNameIOCStrategyTests

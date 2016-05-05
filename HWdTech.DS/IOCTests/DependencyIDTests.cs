@@ -1,9 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using HWdTech.IOC.Impl;
-
-namespace HWdTech.IOC.Tests
+namespace HWdTech.IOCs.Tests
 {
     [TestClass]
     public class DependencyIDTests

@@ -3,10 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Moq;
 
-using HWdTech.IOC;
-using HWdTech.Scopes;
-
-namespace HWdTech.IOC.Tests
+namespace HWdTech.IOCs.Tests
 {
     [TestClass]
     public class IOCTests
@@ -26,15 +23,15 @@ namespace HWdTech.IOC.Tests
                 )
             ).Verifiable();
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     sc.Add(IOC.IOCKey.ToString(), mock.Object);
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             IOC.Register(IOC.IDForDependencyID, strategyMock.Object);
 
@@ -56,15 +53,15 @@ namespace HWdTech.IOC.Tests
                 )
             ).Returns(o).Verifiable();
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     sc.Add(IOC.IOCKey.ToString(), mock.Object);
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             object result = IOC.Resolve<object>(IOC.IDForDependencyID);
 
@@ -88,15 +85,15 @@ namespace HWdTech.IOC.Tests
                 )
             ).Throws(new Exception()).Verifiable();
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     sc.Add(IOC.IOCKey.ToString(), mock.Object);
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             try
             {
@@ -124,15 +121,15 @@ namespace HWdTech.IOC.Tests
                 )
             ).Throws(new RegisterIOCDependencyException("aa")).Verifiable();
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     sc.Add(IOC.IOCKey.ToString(), mock.Object);
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             try
             {
@@ -157,15 +154,15 @@ namespace HWdTech.IOC.Tests
                 )
             ).Throws(new Exception());
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     sc.Add(IOC.IOCKey.ToString(), mock.Object);
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             try
             {
@@ -190,15 +187,15 @@ namespace HWdTech.IOC.Tests
                 )
             ).Throws(new ResolveIOCDependencyException("a"));
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     sc.Add(IOC.IOCKey.ToString(), mock.Object);
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             try
             {
@@ -215,7 +212,7 @@ namespace HWdTech.IOC.Tests
         [ExpectedException(typeof(ResolveIOCDependencyException))]
         public void IOCShouldThrowResolveIOCDependencyExceptionIfCurrentScopeIsNotSet()
         {
-            ScopesManager.SetCurrent(null);
+            ScopeManager.SetCurrent(null);
 
             IOC.Resolve<object>(IOC.IDForDependencyID);
         }
@@ -224,7 +221,7 @@ namespace HWdTech.IOC.Tests
         [ExpectedException(typeof(RegisterIOCDependencyException))]
         public void IOCShouldThrowRegisterIOCDependencyExceptionIfCurrentScopeIsNotSet()
         {
-            ScopesManager.SetCurrent(null);
+            ScopeManager.SetCurrent(null);
 
             IOC.Register(IOC.IDForDependencyID, new Mock<IIOCStrategy>().Object);
         }

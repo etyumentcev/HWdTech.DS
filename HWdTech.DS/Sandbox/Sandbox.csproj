@@ -52,9 +52,9 @@
       <Project>{e120a354-7035-4074-88a0-ccab252ef66e}</Project>
       <Name>IOCCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IOCImpls\IOCImpl.csproj">
+    <ProjectReference Include="..\IOCImpls\IOCDefaultImpl.csproj">
       <Project>{561217af-f3fc-4ed0-bfc1-7b41fbabe9db}</Project>
-      <Name>IOCImpl</Name>
+      <Name>IOCDefaultImpl</Name>
     </ProjectReference>
     <ProjectReference Include="..\IOCStrategiesImpl\IOCStrategiesImpl.csproj">
       <Project>{1074d46d-88bc-4d61-89a8-cf811107c5e0}</Project>
@@ -64,17 +64,17 @@
       <Project>{bfdddf19-6c74-4e15-b015-63d3a1e6ef21}</Project>
       <Name>IOC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScopesManager\ScopesManager.csproj">
+    <ProjectReference Include="..\ScopesManager\ScopeManager.csproj">
       <Project>{8bf3c417-5c05-4550-a2a6-613df0b1e4a5}</Project>
-      <Name>ScopesManager</Name>
+      <Name>ScopeManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Scope\ScopesImpl.csproj">
+    <ProjectReference Include="..\Scope\ScopeDefaultImpl.csproj">
       <Project>{c00e2b10-cb43-4c60-abec-09976fc747a7}</Project>
-      <Name>ScopesImpl</Name>
+      <Name>ScopeDefaultImpl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ServiceLocators\Scopes.csproj">
+    <ProjectReference Include="..\ServiceLocators\ScopeCore.csproj">
       <Project>{3e82fcc0-3a58-429c-ab55-d15ad75aacd5}</Project>
-      <Name>Scopes</Name>
+      <Name>ScopeCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

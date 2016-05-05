@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using HWdTech.Scopes.Impl;
-
 namespace HWdTech.Scopes.Impl.Tests
 {
     [TestClass]

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B866A27-C45F-4C78-B3A7-930B1D040F29}</ProjectGuid>
+    <ProjectGuid>{0F43B343-9997-4829-AC4B-4A1FDA9325DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IOCStrategiesTests</RootNamespace>
-    <AssemblyName>IOCStrategiesTests</AssemblyName>
+    <RootNamespace>HWdTech.Tests</RootNamespace>
+    <AssemblyName>ScopeCoreTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,19 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ResolveByNameIOCStrategyTests.cs" />
-    <Compile Include="SingetonIOCStrategyTests.cs" />
+    <Compile Include="ExceptionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LambdaIOCStrategyTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IOCStrategiesImpl\IOCStrategiesImpl.csproj">
-      <Project>{1074d46d-88bc-4d61-89a8-cf811107c5e0}</Project>
-      <Name>IOCStrategiesImpl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IOCCore\IOCCore.csproj">
-      <Project>{e120a354-7035-4074-88a0-ccab252ef66e}</Project>
-      <Name>IOCCore</Name>
+    <ProjectReference Include="..\ServiceLocators\ScopeCore.csproj">
+      <Project>{3e82fcc0-3a58-429c-ab55-d15ad75aacd5}</Project>
+      <Name>ScopeCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

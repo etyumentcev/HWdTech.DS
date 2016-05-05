@@ -1,10 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using HWdTech.IOC;
-using HWdTech.IOC.Strategies;
-
-namespace IOCStrategiesTests
+namespace HWdTech.IOCs.Strategies.Tests
 {
     [TestClass]
     public class SingletonIOCStrategyTests

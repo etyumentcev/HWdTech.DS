@@ -1,4 +1,4 @@
-﻿namespace HWdTech.IOC.Strategies
+﻿namespace HWdTech.IOCs.Strategies
 {
     public class SingletonIOCStrategy: IIOCStrategy
     {

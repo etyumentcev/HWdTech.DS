@@ -3,14 +3,12 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
-using HWdTech.IOC;
-
 namespace HWdTech.Objects.Impl
 {
     [JsonObject]
     public class DSObject: IObject
     {
-        static IDependencyID bodyForObjectID = IOC.IOC.Resolve<IDependencyID>(IOC.IOC.IDForDependencyID, "bodyForObjectID");
+        static IDependencyID bodyForObjectID = IOC.Resolve<IDependencyID>(IOC.IDForDependencyID, "bodyForObjectID");
 
         [JsonProperty]
         IDictionary<IFieldName, object> body;
@@ -32,7 +30,7 @@ namespace HWdTech.Objects.Impl
 
         public DSObject()
         {
-            this.body = IOC.IOC.Resolve<IDictionary<IFieldName, object>>(bodyForObjectID);
+            this.body = IOC.Resolve<IDictionary<IFieldName, object>>(bodyForObjectID);
         }
 
         public object this[IFieldName key]

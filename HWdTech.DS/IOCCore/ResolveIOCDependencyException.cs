@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HWdTech.IOC
+namespace HWdTech
 {
     public class ResolveIOCDependencyException: Exception
     {

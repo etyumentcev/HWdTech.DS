@@ -4,9 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Moq;
 
-using HWdTech.Scopes;
-
-namespace HWdTech.Scopes.Tests
+namespace HWdTech.Tests
 {
     [TestClass]
     public class ScopesManagerTests
@@ -14,7 +12,7 @@ namespace HWdTech.Scopes.Tests
         [TestInitialize]
         public void Initialize()
         {
-            ScopesManager.ClearListOfSubscribers();
+            ScopeManager.ClearListOfSubscribers();
         }
 
         [TestMethod]
@@ -24,9 +22,9 @@ namespace HWdTech.Scopes.Tests
 
             IScope sc = mock.Object;
 
-            ScopesManager.SetCurrent(sc);
+            ScopeManager.SetCurrent(sc);
 
-            Assert.AreSame(sc, ScopesManager.GetCurrent());
+            Assert.AreSame(sc, ScopeManager.GetCurrent());
         }
 
         [TestMethod]
@@ -42,17 +40,17 @@ namespace HWdTech.Scopes.Tests
 
             Thread thread1 = new Thread(() =>
                 {
-                    ScopesManager.SetCurrent(sc1);
+                    ScopeManager.SetCurrent(sc1);
                     barrier.SignalAndWait();
-                    Assert.AreSame(sc1, ScopesManager.GetCurrent());
+                    Assert.AreSame(sc1, ScopeManager.GetCurrent());
                 }
             );
 
             Thread thread2 = new Thread(() =>
                 {
-                    ScopesManager.SetCurrent(sc2);
+                    ScopeManager.SetCurrent(sc2);
                     barrier.SignalAndWait();
-                    Assert.AreSame(sc2, ScopesManager.GetCurrent());
+                    Assert.AreSame(sc2, ScopeManager.GetCurrent());
                 }
             );
 
@@ -66,8 +64,8 @@ namespace HWdTech.Scopes.Tests
         [TestMethod]
         public void ScopesManagerShouldCreateANewScope()
         {
-            IScope sc1 = ScopesManager.CreateNew();
-            IScope sc2 = ScopesManager.CreateNew();
+            IScope sc1 = ScopeManager.CreateNew();
+            IScope sc2 = ScopeManager.CreateNew();
 
             Assert.IsNotNull(sc1);
             Assert.IsNotNull(sc2);
@@ -77,10 +75,10 @@ namespace HWdTech.Scopes.Tests
         [TestMethod]
         public void ScopesManagerShouldCreateAScopeWithParentScope()
         {
-            IScope sc = ScopesManager.CreateNew();
+            IScope sc = ScopeManager.CreateNew();
             sc.Add("key", "value");
 
-            IScope childScope = ScopesManager.CreateNew(sc);
+            IScope childScope = ScopeManager.CreateNew(sc);
 
             Assert.AreEqual("value", childScope["key"]);
         }
@@ -89,14 +87,14 @@ namespace HWdTech.Scopes.Tests
         public void ScopesManagerAllowsToSubscribeHandlerForCreationEvent()
         {
             bool wasCalled = false;
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     wasCalled = true;
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
+            IScope scope = ScopeManager.CreateNew();
 
             Assert.IsTrue(wasCalled);
         }
@@ -105,14 +103,14 @@ namespace HWdTech.Scopes.Tests
         [ExpectedException(typeof(CreateScopeException))]
         public void ScopesManagerShouldThrowCreateScopeExceptionIfSubscriberThrowsAnyException()
         {
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     throw new Exception();
                 }
             );
 
-            ScopesManager.CreateNew();
+            ScopeManager.CreateNew();
         }
 
         [TestMethod]
@@ -126,7 +124,7 @@ namespace HWdTech.Scopes.Tests
 
             ManualResetEvent arriveToSubscriber = new ManualResetEvent(false);
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     arriveToSubscriber.Set();
@@ -137,7 +135,7 @@ namespace HWdTech.Scopes.Tests
             Thread thread = new Thread(
                 () =>
                 {
-                    ScopesManager.CreateNew();
+                    ScopeManager.CreateNew();
                 }
             );
 
@@ -147,7 +145,7 @@ namespace HWdTech.Scopes.Tests
             
             try
             {
-                ScopesManager.SubscribeOnCreationOfANewScope((sc) => { });
+                ScopeManager.SubscribeOnCreationOfANewScope((sc) => { });
                 Assert.Fail();
             }
             catch (CreateScopeException)
@@ -170,7 +168,7 @@ namespace HWdTech.Scopes.Tests
 
             ManualResetEvent arriveToSubscriber = new ManualResetEvent(false);
 
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
                     arriveToSubscriber.Set();
@@ -181,7 +179,7 @@ namespace HWdTech.Scopes.Tests
             Thread thread = new Thread(
                 () =>
                 {
-                    ScopesManager.CreateNew();
+                    ScopeManager.CreateNew();
                 }
             );
 
@@ -191,7 +189,7 @@ namespace HWdTech.Scopes.Tests
 
             try
             {
-                ScopesManager.ClearListOfSubscribers();
+                ScopeManager.ClearListOfSubscribers();
                 Assert.Fail();
             }
             catch (CreateScopeException)
