@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HWdTech.IOC.Strategies
+namespace HWdTech.IOCs.Strategies
 {
     public class LambdaIOCStrategy: IIOCStrategy
     {

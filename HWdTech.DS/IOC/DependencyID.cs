@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HWdTech.IOC.Impl
+namespace HWdTech.IOCs
 {
     public class DependencyID: IDependencyID
     {

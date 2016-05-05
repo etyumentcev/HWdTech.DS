@@ -1,4 +1,4 @@
-﻿namespace HWdTech.Scopes
+﻿namespace HWdTech
 {
     public interface IScope
     {

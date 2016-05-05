@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using HWdTech.IOC;
+using HWdTech;
 
-namespace HWdTech.IOC.Tests
+namespace HWdTech.Tests
 {
     [TestClass]
     public class CreateExceptions

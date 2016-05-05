@@ -6,7 +6,7 @@
     <ProjectGuid>{D35D090B-32A6-4D89-BACF-1698494A047E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IOCTests</RootNamespace>
+    <RootNamespace>HWdTech.Tests</RootNamespace>
     <AssemblyName>IOCTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -67,13 +67,13 @@
       <Project>{bfdddf19-6c74-4e15-b015-63d3a1e6ef21}</Project>
       <Name>IOC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScopesManager\ScopesManager.csproj">
+    <ProjectReference Include="..\ScopesManager\ScopeManager.csproj">
       <Project>{8bf3c417-5c05-4550-a2a6-613df0b1e4a5}</Project>
-      <Name>ScopesManager</Name>
+      <Name>ScopeManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ServiceLocators\Scopes.csproj">
+    <ProjectReference Include="..\ServiceLocators\ScopeCore.csproj">
       <Project>{3e82fcc0-3a58-429c-ab55-d15ad75aacd5}</Project>
-      <Name>Scopes</Name>
+      <Name>ScopeCore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

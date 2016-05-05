@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D165C66-7BD4-4117-93E8-6698929C8B8C}</ProjectGuid>
+    <ProjectGuid>{4BF9A994-1514-4526-8785-B85D5B956830}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Object</RootNamespace>
-    <AssemblyName>Object</AssemblyName>
+    <RootNamespace>ObjectImpl</RootNamespace>
+    <AssemblyName>ObjectImpl</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,8 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IObject.cs" />
+    <Compile Include="DSObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IOCCore\IOCCore.csproj">
+      <Project>{e120a354-7035-4074-88a0-ccab252ef66e}</Project>
+      <Name>IOCCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IOC\IOC.csproj">
+      <Project>{bfdddf19-6c74-4e15-b015-63d3a1e6ef21}</Project>
+      <Name>IOC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Object\Objects.csproj">
+      <Project>{3d165c66-7bd4-4117-93e8-6698929c8b8c}</Project>
+      <Name>Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

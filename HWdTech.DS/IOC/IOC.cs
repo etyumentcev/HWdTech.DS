@@ -1,9 +1,8 @@
 ﻿using System;
 
-using HWdTech.IOC.Impl;
-using HWdTech.Scopes;
+using HWdTech.IOCs;
 
-namespace HWdTech.IOC
+namespace HWdTech
 {
     public class IOC
     {
@@ -21,7 +20,7 @@ namespace HWdTech.IOC
         {
             try
             {
-                IIOCImpl factory = (IIOCImpl)ScopesManager.GetCurrent()[IOCKey.ToString()];
+                IIOCImpl factory = (IIOCImpl)ScopeManager.GetCurrent()[IOCKey.ToString()];
                 return (T)factory.Resolve(dependency, args);
             }
             catch(ResolveIOCDependencyException)
@@ -38,7 +37,7 @@ namespace HWdTech.IOC
         {
             try
             {
-                IIOCImpl factory = (IIOCImpl)ScopesManager.GetCurrent()[IOCKey.ToString()];
+                IIOCImpl factory = (IIOCImpl)ScopeManager.GetCurrent()[IOCKey.ToString()];
                 factory.Register(dependency, strategy);
             }
             catch (RegisterIOCDependencyException)

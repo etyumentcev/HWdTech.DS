@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace HWdTech.IOC.Impl
+namespace HWdTech.IOCs
 {
     public class IOCImpl: IIOCImpl 
     {

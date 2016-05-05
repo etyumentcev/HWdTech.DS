@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 
-using HWdTech.IOC;
-using HWdTech.IOC.Impl;
-using HWdTech.IOC.Strategies;
-using HWdTech.Scopes;
+using HWdTech;
+using HWdTech.IOCs;
+using HWdTech.IOCs.Strategies;
 
 namespace Sandbox
 {
@@ -15,15 +12,30 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
-            ScopesManager.SubscribeOnCreationOfANewScope(
+            AssemblyName name = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\IOCDefaultImpl.dll");
+            AppDomain.CurrentDomain.Load(name);
+
+            ScopeManager.SubscribeOnCreationOfANewScope(
                 (sc) =>
                 {
-                    sc.Add(IOC.IOCKey.ToString(), new IOCImpl(1000));
+                    sc.Add(
+                        IOC.IOCKey.ToString(),
+                        AppDomain.CurrentDomain.CreateInstanceAndUnwrap(
+                            name.FullName,
+                            "HWdTech.IOCs.IOCImpl",
+                            true,
+                            BindingFlags.Default, 
+                            null,
+                            new object[]{1000},
+                            System.Globalization.CultureInfo.CurrentCulture, 
+                            null
+                        )
+                    );
                 }
             );
 
-            IScope scope = ScopesManager.CreateNew();
-            ScopesManager.SetCurrent(scope);
+            IScope scope = ScopeManager.CreateNew();
+            ScopeManager.SetCurrent(scope);
 
             IOC.Register(
                 IOC.IDForDependencyID,

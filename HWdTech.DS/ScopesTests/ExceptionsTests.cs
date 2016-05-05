@@ -1,9 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using HWdTech.Scopes;
-
-namespace HWdTech.Scopes.Tests
+namespace HWdTech.Tests
 {
     [TestClass]
     public class ExceptionsTests

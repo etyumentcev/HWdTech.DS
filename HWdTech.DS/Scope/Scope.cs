@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-using HWdTech.Scopes;
-
-namespace HWdTech.Scopes.Impl
+namespace HWdTech.Scopes
 {
     public class Scope: IScope
     {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading;
 
-using HWdTech.Scopes.Impl;
+using HWdTech.Scopes;
 
-namespace HWdTech.Scopes
+namespace HWdTech
 {
-    public class ScopesManager
+    public class ScopeManager
     {
         static ThreadLocal<IScope> threadLocal = new ThreadLocal<IScope>();
         static int timeout = 1000;

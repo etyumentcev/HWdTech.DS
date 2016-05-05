@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace HWdTech.IOC.Strategies
+namespace HWdTech.IOCs.Strategies
 {
     public class ResolveByNameIOCStrategy: IIOCStrategy
     {

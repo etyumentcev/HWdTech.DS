@@ -6,8 +6,8 @@
     <ProjectGuid>{9F9DC5E4-8482-4D67-8DB9-158079D5FBCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScopesTests</RootNamespace>
-    <AssemblyName>ScopesTests</AssemblyName>
+    <RootNamespace>HWdTech.Tests</RootNamespace>
+    <AssemblyName>ScopeManagerTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,13 +60,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScopesManager\ScopesManager.csproj">
+    <ProjectReference Include="..\ScopesManager\ScopeManager.csproj">
       <Project>{8bf3c417-5c05-4550-a2a6-613df0b1e4a5}</Project>
-      <Name>ScopesManager</Name>
+      <Name>ScopeManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ServiceLocators\Scopes.csproj">
+    <ProjectReference Include="..\ServiceLocators\ScopeCore.csproj">
       <Project>{3e82fcc0-3a58-429c-ab55-d15ad75aacd5}</Project>
-      <Name>Scopes</Name>
+      <Name>ScopeCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -1,4 +1,4 @@
-﻿namespace HWdTech.IOC
+﻿namespace HWdTech
 {
     public interface IDependencyID
     {
